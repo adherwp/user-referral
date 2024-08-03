@@ -29,5 +29,6 @@ The main tasks of this project include:
 
 2. **Run Project**
 
-    for bash: ./run.sh
-    for zsh: source run.sh
+    ```sh
+    run on bash terminal: ./run.sh
+    run on zsh terminal: source run.sh
