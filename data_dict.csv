@@ -1,0 +1,19 @@
+Column Name,Description,Data Type,Constraints/Notes
+referral_id,Unique identifier for the referral,int64,Must be unique
+user_id,Unique identifier for the user,int64,Must be unique
+transaction_id,Unique identifier for the transaction,int64,Must be unique if present
+referral_source,Source of the referral,object,May contain null values
+referral_source_category,Category of the referral source,object,Derived from referral_source
+reward_value,Value of the referral reward,float64,Must be non-null if description is "Berhasil"
+reward_type,Type of the referral reward,object,May contain null values
+description,Status description of the referral,object,Values can be "Berhasil", "Menunggu", or "Tidak Berhasil"
+transaction_status,Status of the transaction,object,Values can be "Paid" or "Unpaid"
+transaction_at,Timestamp of the transaction,datetime64[ns],Must be greater than referral_at
+transaction_location,Location of the transaction,object,May contain null values
+timezone_transaction,Timezone of the transaction location,object,May contain null values
+transaction_type,Type of the transaction,object,Values can be "New" or "Renewal"
+referral_at,Timestamp of the referral,datetime64[ns],Must be non-null
+membership_expired_date,Membership expiration date for the user,datetime64[ns],Must be non-null
+is_deleted,Indicates if the user is deleted,bool,False if the user is not deleted
+is_reward_granted,Indicates if the reward is granted,bool,True if the reward is granted
+is_business_logic_valid,Indicates if the business logic is valid for the referral,bool,True if the referral meets all valid business logic criteria
